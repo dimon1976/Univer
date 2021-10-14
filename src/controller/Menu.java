@@ -11,10 +11,7 @@ import service.impl.GroupServiceImpl;
 import service.impl.StudentServiceImpl;
 import service.impl.UniversityGroupImpl;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 
 public class Menu {
     public static void menu() {
@@ -48,31 +45,18 @@ public class Menu {
         student.setLastName("Halaidzin");
         student.setMarks(Arrays.asList(9, 4));
         studentService.addStudent(student, storage);
-//        System.out.println("Добавил студента 1 - "+storage.getStudentList().toString());
         groupService.addStudentGroup(1, "Math", storage);
 
         Student student2 = new Student();  /* создаем студента */
         student2.setId(2);
         student2.setFirstName("Иван");
         student2.setLastName("Иванов");
-//        student2.setMarks(new ArrayList<>());
         studentService.addStudent(student2, storage);
-//        System.out.println("Добавил студента 2 - "+storage.getStudentList().toString());
         groupService.addStudentGroup(2, "Math", storage);
-
-//        groupService.removeStudentByName("Иван",storage);
-//        groupService.removeStudentById(2,storage);
-//        groupService.printById(1,storage);
-
-//        university = universityService.removeUniversity(university, storage);
         studentService.editStudent(2, "First", "Last", storage);
         studentService.addMarks(2,5,storage);
-
-
         groupService.sumMarks(storage);
-
         System.out.println(university);
-
     }
 }
 
